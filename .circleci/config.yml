@@ -12,7 +12,10 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./manage.py test
+        name: run tests
+        command: |
+          . venv/bin/activate
+          python manage.py test
           name: Test
 
 workflows:
